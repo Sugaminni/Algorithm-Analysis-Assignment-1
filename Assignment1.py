@@ -43,7 +43,7 @@ if resolved["gd"] is None and resolved["gf"] is not None and resolved["ga"] is n
     df["__GD__"] = df[resolved["gf"]] - df[resolved["ga"]]
     resolved["gd"] = "__GD__"
 
-# Casts numeric fields to numeric (treat NaNs as worst so sort is stable and safe)
+# Casts numeric fields to numeric
 for k in ["points", "gf", "ga", "gd", "wins"]:
     col = resolved.get(k)
     if col is not None and col in df.columns:
